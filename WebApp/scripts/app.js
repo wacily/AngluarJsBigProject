@@ -1,0 +1,1 @@
+var app = angluar.module("myApp",[]);
