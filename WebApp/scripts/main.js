@@ -7,7 +7,19 @@ require.config({
         "angular-route":"libs/angular1.4.12/angular-route.min",
         "angular-zh-cn":"libs/angular1.4.12/angular-locale_zh-cn",
         "jquery":"libs/jquery1.11.3/jquery-1.11.3.min",
-        "bootstrap":"libs/bootstrap-3.3.5/js/bootstrap.min"
+        "bootstrap":"libs/bootstrap-3.3.5/js/bootstrap.min",
+
+        "app":"app",
+        "app-route":"route"
     },
-    urlArgs: "bust=" +  (new Date()).getTime()
+    shim:{
+    	'angular':{
+    		exports:'angular'
+    	}
+    },
+    urlArgs: "version=" +  (new Date()).getTime()
+});
+
+require(['angular','app'],function(){
+	angular.bootstrap(document,['app']);
 });
